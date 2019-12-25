@@ -1,4 +1,4 @@
-name: 'GitHub Actions Weather Bot'
+name: '定时发送天气报告'
 
 on:
   push:
@@ -9,11 +9,11 @@ jobs:
   bot:
     runs-on: ubuntu-latest
     steps:
-      - name: 'Checkout codes'
+      - name: '[1]Checkout codes'
         uses: actions/checkout@v1
-      - name: 'Get Result'
+      - name: '[2]Get Result'
         run: bash ./weather.sh
-      - name: 'Send mail'
+      - name: '[3]Send mail'
         uses: dawidd6/action-send-mail@master
         with:
           server_address: smtp.126.com
